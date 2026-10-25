@@ -1,4 +1,3 @@
-
 # ⚡ Build-Pulse Analytics
 
 > A zero-cost, serverless DevOps observability platform that extracts real-time CI/CD pipeline metrics from GitHub Actions and visualizes them on a high-performance React command center.
@@ -39,6 +38,63 @@
 * **Backend / Tracker:** Node.js (utilizing native `fetch` and `fs` modules—zero external dependencies)
 * **CI/CD Automation:** GitHub Actions (Ubuntu runner)
 * **Hosting & CDN:** Vercel Global Edge Network
+
+---
+
+## 💻 Prerequisites
+
+* **Node.js** (v18 or higher)
+* **Git** installed on your system
+* A **GitHub account** with Actions enabled
+* A **Vercel account** for hosting the dashboard
+
+---
+
+## 🚀 Local Installation & Setup
+
+### 1. Clone the Repository
+
+```bash
+git clone [https://github.com/braveen-r/build-pulse-analytics.git](https://github.com/braveen-r/build-pulse-analytics.git)
+cd build-pulse-analytics
+
+```
+
+### 2. Run the Dashboard Locally
+
+The backend relies entirely on GitHub Actions, so locally, you only need to spin up the Vite React frontend:
+
+```bash
+cd dashboard
+npm install
+npm run dev
+
+```
+
+*The dashboard will start on `http://localhost:5173` and read directly from your local `data/metrics.json` file.*
+
+---
+
+## ⚙️ GitHub Actions Configuration (Crucial)
+
+For the serverless JSON database to work, the GitHub Actions bot needs permission to commit the new metrics back to your repository.
+
+1. Go to your GitHub repository in the browser.
+2. Navigate to **Settings** > **Actions** > **General**.
+3. Scroll down to **Workflow permissions**.
+4. Select **Read and write permissions** and click Save.
+
+---
+
+## ☁️ Vercel Deployment
+
+Deploying the React command center to Vercel is entirely free and takes seconds:
+
+1. Log in to Vercel and click **Add New** > **Project**.
+2. Import your `build-pulse-analytics` repository from GitHub.
+3. Under **Framework Preset**, Vercel should automatically detect **Vite**.
+4. Change the **Root Directory** from the main folder to `dashboard`.
+5. Click **Deploy**.
 
 ---
 
@@ -95,17 +151,16 @@ git push
 
 ---
 
-## !Preview
-<img width="1027" height="848" alt="Shot-2026-10-22-234452" src="https://github.com/user-attachments/assets/0493a03e-999e-4a1c-b9ae-a558b28b2c3d" />
+## 📸 Preview
 
 ---
 
-**Author:** [Braveen R](https://braveenr.linklee.in/)</br>
+**Author:** [Braveen R](https://braveenr.linklee.in/)
 
 ---
 
 ## ✌️ Wrapping Up
 
-You now have a fully functional, production-ready, zero-cost CI/CD telemetry dashboard. Push code, watch your GitHub Actions runner fire up, and see your live metrics instantly reflected on your Vercel command center! 🚀 </br>
+You now have a fully functional, production-ready, zero-cost CI/CD telemetry dashboard. Push code, watch your GitHub Actions runner fire up, and see your live metrics instantly reflected on your Vercel command center! 🚀 
 
 See you in the terminal!
